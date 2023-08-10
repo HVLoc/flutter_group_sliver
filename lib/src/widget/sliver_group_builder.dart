@@ -43,12 +43,11 @@ class SliverGroupBuilder extends StatelessWidget {
         decorationWidget: Container(decoration: this.decoration));
 
     EdgeInsetsGeometry sliverPadding = EdgeInsets.zero;
-    if (this.padding != null) {
-      sliverPadding = sliverPadding.add(this.padding);
-    }
-    if (this.margin != null) {
-      sliverPadding = sliverPadding.add(this.margin);
-    }
+
+    sliverPadding = sliverPadding.add(this.padding);
+
+    sliverPadding = sliverPadding.add(this.margin);
+
     if (sliverPadding != EdgeInsets.zero) {
       return SliverPadding(padding: sliverPadding, sliver: child);
     } else {
